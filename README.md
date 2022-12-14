@@ -1,6 +1,7 @@
 # labenu-fullstack
 Projetos na LABENU
 
+
 variaveis-exercicio - dia 21-11-2022
 operadores-exercicio - dia 22-11-2022
 funções - dia 23-11-2022
@@ -18,3 +19,4 @@ Revisão - dia 08-12-2022
 Projeto Intro Web - 09-12-2022
 HTML I - 12-12-2022
 HTML II - 13-12-2022
+CSS I - 14-12-2022
