@@ -17,3 +17,4 @@ Funções de array - dia 07-12-2022
 Revisão - dia 08-12-2022
 Projeto Intro Web - 09-12-2022
 HTML I - 12-12-2022
+HTML II - 13-12-2022
