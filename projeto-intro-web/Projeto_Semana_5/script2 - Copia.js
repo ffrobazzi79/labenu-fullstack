@@ -15,23 +15,31 @@ const country1HDI = 0.921
 const country1NorthernHemisphere = true
 const country1WesternCountry = true
 const country1UpToDateData = true
+const imagemCountry1 = "./assets/640px-Flag_of_the_United_States.svg.webp"
+const linkCountry1 = "https://pt.wikipedia.org/wiki/Estados_Unidos"
 const country2Name = "República Popular da China"
 const country2HDI = 0.768
 const country2NorthernHemisphere = true
 const country2WesternCountry = false
 const country2UpToDateData = true
+const imagemCountry2 = "./assets/640px-Flag_of_the_People's_Republic_of_China.svg.png"
+const linkCountry2 = "https://pt.wikipedia.org/wiki/Estados_Unidos"
 const country3Name = "República Federativa do Brasil"
-const country3HDI= 0.754
+const country3HDI = 0.754
 const country3NorthernHemisphere = false
 const country3WesternCountry = true
 const country3UpToDateData = true
+const imagemCountry3 = "./assets/640px-Flag_of_Brazil.svg.webp"
+const linkCountry3 = "https://pt.wikipedia.org/wiki/Estados_Unidos"
 const country4Name = "Comunidade da Austrália"
 const country4HDI = 0.951
 const country4NorthernHemisphere = false
 const country4WesternCountry = false
 const country4UpToDateData = true
+const imagemCountry4 = "./assets/640px-Flag_of_Australia_(converted).svg.png"
+const linkCountry4 = "https://pt.wikipedia.org/wiki/Estados_Unidos"
 // 3-cálculo de média valores numéricos e Imprima. Guarde este valor em uma const.
-let calculoMediaHDI = (country1HDI+country2HDI+country3HDI+country4HDI)/4
+let calculoMediaHDI = (country1HDI + country2HDI + country3HDI + country4HDI) / 4
 console.log(`Média do Índice de desenvolvimento humano : ${calculoMediaHDI}`)
 // 4-Com um console.log, imprima o resultado de uma operação lógica que checa se todos os valores de variáveis booleanas criadas até aqui são verdadeiras.
 console.log("Dados atualizados : ", country1UpToDateData && country2UpToDateData && country3UpToDateData && country4UpToDateData)
@@ -58,10 +66,12 @@ const country4LandBorders = ["Não tem fronteira terrestre com ouros países"]
 // 1-Transforme os itens que criamos nas últimas semanas em objetos.
 let country1, country2, country3, country4 = {}
 
-country1 = {...country1, countryName:country1Name, HDI:country1HDI, NorthernHemisphere:country1NorthernHemisphere, WesternCountry:country1WesternCountry, UpToDateData:country1UpToDateData, GPD_MW_Population: country1GPD_MW_Population, LandBorders: country1LandBorders}
-country2 = {...country2, countryName:country2Name, HDI:country2HDI, NorthernHemisphere:country2NorthernHemisphere, WesternCountry:country2WesternCountry, UpToDateData:country2UpToDateData, GPD_MW_Population: country2GPD_MW_Population, LandBorders: country2LandBorders}
-country3 = {...country3, countryName:country3Name, HDI:country3HDI, NorthernHemisphere:country3NorthernHemisphere, WesternCountry:country3WesternCountry, UpToDateData:country3UpToDateData, GPD_MW_Population: country3GPD_MW_Population, LandBorders: country3LandBorders}
-country4 = {...country4, countryName:country4Name, HDI:country4HDI, NorthernHemisphere:country4NorthernHemisphere, WesternCountry:country4WesternCountry, UpToDateData:country4UpToDateData, GPD_MW_Population: country4GPD_MW_Population, LandBorders: country4LandBorders}
+country1 = { ...country1, countryName: country1Name, HDI: country1HDI, NorthernHemisphere: country1NorthernHemisphere, WesternCountry: country1WesternCountry, UpToDateData: country1UpToDateData, GPD_MW_Population: country1GPD_MW_Population, LandBorders: country1LandBorders, Image: imagemCountry1, Link: linkCountry1 }
+country2 = { ...country2, countryName: country2Name, HDI: country2HDI, NorthernHemisphere: country2NorthernHemisphere, WesternCountry: country2WesternCountry, UpToDateData: country2UpToDateData, GPD_MW_Population: country2GPD_MW_Population, LandBorders: country2LandBorders, Image: imagemCountry2, Link: linkCountry2 }
+country3 = { ...country3, countryName: country3Name, HDI: country3HDI, NorthernHemisphere: country3NorthernHemisphere, WesternCountry: country3WesternCountry, UpToDateData: country3UpToDateData, GPD_MW_Population: country3GPD_MW_Population, LandBorders: country3LandBorders, Image: imagemCountry3, Link: linkCountry3 }
+country4 = { ...country4, countryName: country4Name, HDI: country4HDI, NorthernHemisphere: country4NorthernHemisphere, WesternCountry: country4WesternCountry, UpToDateData: country4UpToDateData, GPD_MW_Population: country4GPD_MW_Population, LandBorders: country4LandBorders, Image: imagemCountry4, Link: linkCountry4 }
+
+
 
 // 2-Crie um array para guardar os objetos. Este array deve estar vazio, por enquanto;
 let arrayCountries = []
@@ -103,8 +113,8 @@ console.log(arrayCountries);
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //Semana3
 //1. Reescrevendo o relatório criado que foi feito na semana 1, altere a forma que a característica do tipo array dos itens seja escrita como um laço que guarde todos os valores da propriedade array do objeto em uma mesma string. Utilize esta string no relatório.
-for(let u of arrayCountries){
-  console.log(u.countryName + " - Fronteira terrestre com : "+ u.LandBorders.join(", "));
+for (let u of arrayCountries) {
+  console.log(u.countryName + " - Fronteira terrestre com : " + u.LandBorders.join(", "));
 }
 // 2. Ainda no relatório, altere-o para que ele seja criado utilizando laços. Ou seja, você não deve mais imprimir individualmente cada item do relatório. Cada item deve ser exibido a partir de uma iteração do laço. Para testar, adicione mais um item ao array de objetos, e verifique se ele é exibido corretamente.
 for (const i of arrayCountries) {
@@ -114,15 +124,58 @@ for (const i of arrayCountries) {
 function countryReport(c) {
   return (`País: ${c.countryName}\nPopulação : ${c.GPD_MW_Population[2]}\nRenda per capta : US$ ${c.GPD_MW_Population[0]}\nSalário mínimo anual : US$ ${c.GPD_MW_Population[1]}\nIDH : ${c.HDI}\nHemisfério Norte : ${c.NorthernHemisphere}\nPaís do ocidente : ${c.WesternCountry}\n`)
 }
-console.log("Função CountryReport:\n\n" + countryReport(country1) );
+console.log("Função CountryReport:\n\n" + countryReport(country1));
 // 4. Crie uma função que recebe um array de objetos e uma string. Esta função deve retornar um objeto, e o objeto retornado deve possuir apenas os itens que tenham o nome/título igual à string passada como parâmetro. Caso não exista um item, exiba um ALERT indicando que nenhum item foi encontrado.
-function searchCountry(array, string) {
-    for (const x in array) {
-      if (array[x].countryName.includes(string)) {
-        console.log(array[x].countryName);
-      } else {
-        alert("País não encontrado.")
-      } 
-    }
+let contPaises = document.getElementById("contPaises")
+
+// País: ${i.countryName}\ ${i.GPD_MW_Population[2]}\nRenda per  US$ ${i.GPD_MW_Population[0]}\nSalário mínimo anual : US$ ${i.GPD_MW_Population[1]}\nIDH : ${i.HDI}\${i.NorthernHemisphere}\${i.WesternCountry}\n`)
+
+function createSection(recebaPais) {
+  let section = `<section>
+                <img class="bandeiraMedia" src="${recebaPais.Image}" alt="Bandeira ${recebaPais.countryName}">
+                <ul>
+                    <li><a href="${recebaPais.Link}">País: ${recebaPais.countryName}</a></li>
+                    <li>População : ${recebaPais.GPD_MW_Population[2]}</li>
+                    <li>Renda per capta : US$ ${recebaPais.GPD_MW_Population[0]}</li>
+                    <li>Salário mínimo anual : US$ ${recebaPais.GPD_MW_Population[1]}</li>
+                    <li>IDH : ${recebaPais.GPD_MW_Population[0]}</li>
+                    <li>Hemisfério Norte : true</li>
+                    <li>País do ocidente : true</li>
+                </ul>
+            </section>`
+
+  contPaises.innerHTML += section
 }
-searchCountry(arrayCountries, "Brasil")
+
+function searchCountry(array, string) {
+  contPaises.innerHTML = ""
+  let arrayCountriesFiltred = []
+  for (const x in array) {
+    if (array[x].countryName.includes(string)) {
+      console.log(array[x].countryName);
+      createSection(array[x])
+      arrayCountriesFiltred.push(array[x])
+    }
+  }
+  if (arrayCountriesFiltred.length == 0) {
+    alert("País não encontrado.")
+  }
+  console.log(arrayCountriesFiltred)
+}
+
+// searchCountry(arrayCountries, "Brasil")
+// document.getElementById("textoPesquisa").value
+function clickPress() {
+  let textoPesquisa = document.getElementById("textoPesquisa")
+  if (textoPesquisa.value.length === 0) {
+    alert("pesquisa vazia")
+  } else {
+    searchCountry(arrayCountries, textoPesquisa.value)
+  }
+}
+
+document.getElementById("pesquisaBotao").addEventListener("click", function (element) { clickPress() })
+
+document.getElementById("textoPesquisa").addEventListener("keypress", function (element) { 
+  if (element.key === "Enter") 
+  {clickPress() }})
