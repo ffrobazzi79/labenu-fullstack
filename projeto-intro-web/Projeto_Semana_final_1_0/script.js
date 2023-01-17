@@ -90,6 +90,18 @@ let contPaises = document.getElementById("contPaises");
 // País: ${i.countryName}\ ${i.GPD_MW_Population[2]}\nRenda per  US$ ${i.GPD_MW_Population[0]}\nSalário mínimo anual : US$ ${i.GPD_MW_Population[1]}\nIDH : ${i.HDI}\${i.NorthernHemisphere}\${i.WesternCountry}\n`)
 
 function createSection(recebaPais) {
+  if (recebaPais.WesternCountry === true) {
+    recebaPais.WesternCountry = "sim"
+  } else {
+    recebaPais.WesternCountry = "não"
+  }
+
+  if (recebaPais.NorthernHemisphere === true) {
+    recebaPais.NorthernHemisphere = "sim"
+  } else {
+    recebaPais.NorthernHemisphere = "não"
+  }
+
   let section = `<section>
                 <img class="bandeiraMedia" src="${recebaPais.Image}" alt="Bandeira ${recebaPais.countryName}">
                 <ul>
@@ -99,8 +111,8 @@ function createSection(recebaPais) {
                     <li>Renda per capta : US$ ${recebaPais.GPD_MW_Population[0]}</li>
                     <li>Salário mínimo anual : US$ ${recebaPais.GPD_MW_Population[1]}</li>
                     <li>IDH : ${recebaPais.HDI}</li>
-                    <li>Hemisfério Norte : ${recebaPais.NorthernHemisphere}</li>
                     <li>País do ocidente : ${recebaPais.WesternCountry}</li>
+                    <li>Hemisfério Norte : ${recebaPais.NorthernHemisphere}</li>
                 </ul>
             </section>`
 

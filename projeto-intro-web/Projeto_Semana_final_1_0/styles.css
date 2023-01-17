@@ -15,6 +15,7 @@
 #divBody {
     display: flex;
     flex-direction: column;
+    min-width: 220px;
     width: 100vw;
     height: 100vh;
     font-size: calc(0.5657708628005658vw + 0.75em);
@@ -23,9 +24,9 @@
 header {
     display: flex;
     border: 1px solid black;
-    background: linear-gradient(to bottom, #000000 0%, #200000 100%);
+    background: linear-gradient(to top, #000000 30%, #800000 70%);
     color: rgb(196, 196, 196);
-    text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+    text-shadow: 1px 1px 2px black, 0 0 1em rgb(255, 0, 0), 0 0 0.2em rgb(255, 0, 0);
     padding-left: calc(0.7874015748031497vw + 20px);
     width: 100%;
     height: 8vh;
@@ -34,7 +35,7 @@ header {
 
 main {
     background-image: linear-gradient(to bottom,
-            rgba(255, 157, 0, 0.7),
+            rgba(255, 230, 0, 0.7),
             rgba(0, 0, 255, 0.7),
             rgba(0, 0, 31, 0.7)), url("./assets/World-Map-Transparent.png");
     background-repeat: no-repeat;
@@ -53,19 +54,34 @@ main {
 }
 
 .divProcurar input, button{
-    background-color: rgb(196, 196, 196);
+    background-image: linear-gradient(to right, #fffbd2, #ffffff, #fff8bc);
     box-shadow: 0px 0px 7px rgb(5, 0, 47);
     border: none;
     height: calc(0.7vw + 2em);
     padding: 7px;
-    border-radius: 1rem;
+    border-radius: 0.7rem;
     color: black;
+    font-size: calc(0.3vw + 1em);
 }
+
+.divProcurar button:hover {
+    background-image: linear-gradient(to right, #dfeb39, #ebff78, #dfeb39c4);  
+    box-shadow: 0 5px 15px rgba(242, 97, 103, .4);
+    transition: all 3s;
+}
+
+.divProcurar button:active {
+    background-image: linear-gradient(to right, #eb8f39, #ff8178, #eb8f39d0); 
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+}
+
 
 .divProcurar input {
     box-shadow: 0px 0px 7px rgb(5, 0, 47);
     outline: 0;
-    margin-right: 0.5vw;
+    margin-right: 0.7vw;
+    width: calc(8.24rem + 6vw);
+
 }
 
 
@@ -76,16 +92,28 @@ main {
     gap: 5vw;
     align-items: center;
     justify-content: center;
+    
 }
 
 section {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(255, 255, 255, 0.4);
     width: 70vw;
-    border: 1px solid black;
+    border: 1px solid rgb(2, 0, 122);
     border-radius: 2vw;
     padding: 1vw;
-    text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.05em blue;
-    
+    text-shadow: 1px 1px 2px black, 0 0 1em rgb(255, 102, 0), 0 0 0.05em rgb(255, 187, 0);
+    box-shadow: 10px 15px 8px 0px rgba(2, 0, 95, 0.75);
+    transition: background-color 3s;
+}
+
+section a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+
+section a:hover, a:active > section {
+    transition: background-color 3s;
+    background-color: rgba(255, 0, 0, 0.1);
+    text-decoration: underline;
 }
 
 .bandeiraMedia {
@@ -103,12 +131,13 @@ li {
 footer {
     display: flex;
     flex-direction: column;
-    background: linear-gradient(to bottom, #010014 0%, #000000 100%);
+    background: linear-gradient(to bottom, #04004d 0%, #000000 100%);
     border: 1px solid black;
+    padding-left: calc(0.7874015748031497vw + 20px);
     width: 100%;
     height: 10%;
     justify-content: center;
-    text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+    text-shadow: 1px 1px 2px black, 0 0 1em rgb(0, 0, 160), 0 0 0.2em rgb(0, 0, 153);
 }
 
 @media screen and (min-width:901px) {
