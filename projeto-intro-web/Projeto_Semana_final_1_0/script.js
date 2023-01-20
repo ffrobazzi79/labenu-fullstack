@@ -65,6 +65,7 @@ if (country1.UpToDateData) {
 
 console.log("valor de arrayCountries: " + arrayCountries)
 
+// Média do IDH dos 4 países
 let calculoMediaHDI = (arrayCountries[0].HDI + arrayCountries[1].HDI + arrayCountries[2].HDI + arrayCountries[3].HDI) / arrayCountries.length
 console.log(`Média do Índice de desenvolvimento humano : ${calculoMediaHDI}`);
 
@@ -103,9 +104,9 @@ function createSection(recebaPais) {
   }
 
   let section = `<section>
-                <img class="bandeiraMedia" src="${recebaPais.Image}" alt="Bandeira ${recebaPais.countryName}">
+                <img class="bandeira" src="${recebaPais.Image}" alt="Imagem da bandeira do país: ${recebaPais.countryName}">
                 <ul>
-                    <li><a href="${recebaPais.Link}">País: ${recebaPais.countryName.toUpperCase()}</a></li>
+                    <li><a href="${recebaPais.Link}">${recebaPais.countryName.toUpperCase()}</a></li>
                     <br/>
                     <li>População : ${recebaPais.GPD_MW_Population[2]}</li>
                     <li>Renda per capta : US$ ${recebaPais.GPD_MW_Population[0]}</li>
@@ -144,7 +145,7 @@ function clickPress() {
   contPaises.innerHTML = ""
   let textoPesquisa = document.getElementById("textoPesquisa")
   if (textoPesquisa.value.length === 0) {
-    alert("pesquisa vazia")
+    alert("Pesquisa vazia")
   } else {
     searchCountry(arrayCountries, textoPesquisa.value)
   }
